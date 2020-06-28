@@ -1,0 +1,28 @@
+@mixin media($breakpoint)
+  @if $breakpoint==mobile
+    @media only screen and (max-width: 575px)
+      @content
+  @if $breakpoint==tablet
+    @media only screen and (max-width: 767px)
+      @content
+  @if $breakpoint==desktop
+    @media only screen and (max-width: 991px)
+      @content
+  @if $breakpoint==large
+    @media only screen and (min-width: 1200px)
+      @content
+
+
+@mixin media-for-container($breakpoint)
+  @if $breakpoint==mobile
+    @media only screen and (min-width: 575px)
+      @content
+  @if $breakpoint==tablet
+    @media only screen and (min-width: 767px)
+      @content
+  @if $breakpoint==desktop
+    @media only screen and (min-width: 991px)
+      @content
+  @if $breakpoint==large
+    @media only screen and (min-width: 1200px)
+      @content

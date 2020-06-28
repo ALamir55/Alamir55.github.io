@@ -1,0 +1,684 @@
+@import '../sass/_mixin.sass'
+  
+// Variables
+$mainTitleSize: 2.2rem
+$subTitleSize: 1.125rem
+$paddingTop : 2.5em
+$paddingBottom : 2.5em
+$sm-media: 576px
+$md-media: 768px
+$desktop-media: 992px
+$lg-media: 1200px
+
+*
+  box-sizing: border-box
+  &:after, &:before
+    box-sizing: border-box
+
+%heading
+    color: var(--main-color)
+    font-size: $mainTitleSize
+    margin: 0 0 0.7em
+    text-align: center  
+
+body
+  font-family: 'Open Sans', sans-serif
+  font-size: 1rem
+  margin: 0
+
+.container
+  // width: 85%
+  padding-left: 1.3em
+  padding-right: 1.3em
+  margin: auto
+
+.clearfix
+  clear: both
+
+// Start Settings Box
+.settings-box
+  position: fixed
+  top: 0
+  z-index: 999
+  min-height: 100vh
+  width: 15em
+  background-color: #FFF
+  transition: 0.3s
+  &.open
+    border-right: 1px solid #ccc
+    box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.5)
+  .toggle-icon
+    position: absolute
+    top: 150px
+    left: 15em
+    background-color: #FFF
+    text-align: center
+    cursor: pointer
+    .gear-icon
+      width: 2.5em
+      padding: 1em 0
+  .option-box
+    padding: 0.5em
+    background: #EEE
+    margin: 0.8em
+    text-align: center
+    h4
+      margin: 0
+      color: #666
+    .colors-list
+      padding: 0
+      list-style: none
+      margin: 0.5em 0 0
+      li
+        margin: 0
+        display: inline-block
+        cursor: pointer
+        width: 1.5em
+        height: 1.5em
+        border-radius: 50%
+        border: 4px solid #EEE
+        &.active
+          border-color: #FFF
+    .random-background
+    span.yes,span.no
+      display: inline-block
+      background: var(--main-color)
+      color: #ffffff
+      padding: 0.2em 0.4em
+      margin-top: 0.4em
+      font-size: 0.8rem
+      font-weight: 900
+      width: 3.4em
+      border-radius: 0.4em
+      cursor: pointer
+      opacity: 0.5
+      &:first-child
+        margin-right: 0.4em
+      &.active
+        opacity: 1
+  .reset-button
+    background-color: #E91E63
+    outline: none
+    border: none
+    padding: 0.5em
+    color: #FFF
+    font-weight: 900
+    font-size: 0.9rem
+    border-radius: 0.5em
+    cursor: pointer
+    transition: all 0.5s
+    &:hover
+      color: #E91E63
+      background-color: #ffffff
+// End Settings Box
+
+// Start Bullets
+.nav-bullets
+  position: fixed
+  z-index: 999
+  top: 50%
+  transform: translateY(-50%)
+  right: 0
+  width: 2.2em
+  .bullet
+    width: 15px
+    height: 15px
+    border: 2px solid var(--main-color)
+    border-radius: 50%
+    margin: 1em auto
+    cursor: pointer
+    position: relative
+    .tooltip
+      background-color: var(--main-color)
+      position: absolute
+      min-width: 120px
+      right: 36px
+      top: -12px
+      color: #FFF
+      text-align: center
+      padding: 8px 10px
+      opacity: 0
+      transition: opacity 0.5s
+      cursor: default
+      pointer-events: none
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: -34px
+        border-width: 17px
+        border-style: solid
+        border-color: transparent transparent transparent var(--main-color)
+    &:hover > .tooltip
+      opacity: 1
+// End Bullets
+
+// Start Landing Page
+.landing-page
+  min-height: 100vh
+  background: url('../imgs/01.jpg') no-repeat center center/cover
+  position: relative
+  .overlay
+    background-color: rgba(0,0,0,.5)
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+  .header-area
+    position: relative
+    z-index: 10
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.3em
+    color: #ffffff
+    .logo
+      font-weight: bold
+      font-size: 1.4rem
+    .links-container
+      .links
+        list-style: none
+        padding: 0
+        margin: 0.5em 0 0
+        li
+          display: inline-block
+          &:not(:last-child)
+            margin-right: 0.5em
+          a
+            color: #ffffff
+            text-decoration: none
+            transition: 0.3s
+            &:hover,&.active
+              color: var(--main-color)
+      .toggle-menu
+        background: none
+        border: none
+        outline: none
+        width: 40px
+        cursor: pointer
+        margin-top: 0.5em
+        display: none
+        position: relative
+        &.menu-active:before
+          content: ''
+          position: absolute
+          border-width: 10px
+          border-style: solid
+          border-color: transparent transparent #ffffff transparent
+          left: 50%
+          margin-left: -10px
+          bottom: -16px
+        span
+          display: block
+          height: 4px
+          background: #ffffff
+          margin-bottom: 0.3em
+  .introducation-text
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    z-index: 2
+    color: #ffffff
+    text-align: center
+    width: 95%
+    h1
+      margin: 0 0 0.5em
+      font-size: $mainTitleSize
+      font-weight: 900
+      @include media(mobile)
+        font-size: 1.7rem
+      span
+        color: var(--main-color)
+    p
+      margin: 0
+      line-height: 1.7
+      font-size: $subTitleSize
+      font-weight: 300
+      @include media(mobile)
+        font-size: 1rem
+
+@include media(desktop)
+  .links-container
+    .links
+      display: none !important
+      &.open
+        position: absolute
+        left: 0
+        top: 65px
+        background-color: #ffffff
+        padding: 1em !important
+        border-radius: 0.4em
+        display: block !important
+        width: 100%
+        text-align: center
+        li
+          display: block !important
+          &:not(:last-of-type)
+            margin-right: 0 !important
+            margin-bottom: 1em
+          a
+            color: var(--main-color) !important
+            font-weight: 900
+            &:hover
+              color: #333 !important
+    .toggle-menu
+      display: block !important
+// End Landing Page
+
+// Start About us
+.about-us
+  display: flex
+  justify-content: space-between
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  @include media(tablet)
+    display: block
+    text-align: center
+  .info-box
+    width: 600px
+    @include media(tablet)
+      width: auto
+    h2
+      color: var(--main-color)
+      font-size: $mainTitleSize
+      margin-top: 0
+      margin-bottom: 0.4em
+    p
+      margin: 0
+      line-height: 1.8
+      color: #767676
+  .image-box
+    width: 250px
+    @include media(tablet)
+      width: auto 
+    img
+      max-width: 100%
+// End About us
+
+// Start Our SKills
+.skills
+  background-color: #eeeeee
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  h2
+    @extend %heading
+  .skill-box
+    background-color: #ffffff
+    padding: 1.5em
+    margin-bottom: 0.5em
+    display: flex
+    @include media(tablet)
+      display: block
+    .skill-name
+      font-weight: bold
+      text-align: center
+      width: 140px
+      line-height: 30px
+      @include media(tablet)
+        width: 100%
+        margin-bottom: 1.2em
+    .skill-progress
+      height: 30px
+      width: 100%
+      background: #F7f7f7
+      border-radius: 1em
+      position: relative
+      overflow: hidden
+      span
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        border-radius: 1em
+        background-color: var(--main-color)
+        width: 0%
+        transition: all 1s
+// End Our Skills
+
+// Start Our Gallery
+.gallery
+  text-align: center
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  h2
+    @extend %heading
+  .images-box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    @include media(tablet)
+      justify-content: center
+    img
+      width: 200px
+      padding: 0.125em
+      background: #f6f6f6
+      border: 1px solid #ccc
+      margin: 0.5em 0 0
+      cursor: pointer
+      @include media(tablet)
+        width: 100%
+.popup-overlay
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.7)
+
+.popup-box
+  position: fixed
+  top: 50%
+  left: 50%
+  z-index: 1001
+  transform: translate(-50%, -50%)
+  background-color: #FFF
+  border: 1px solid #cccccc
+  padding: 2em
+  .close-button
+    position: absolute
+    top: -15px
+    right: -15px
+    width: 40px
+    height: 40px
+    line-height: 40px
+    text-align: center
+    background-color: var(--main-color)
+    color: #ffffff
+    font-weight: 900
+    cursor: pointer
+    box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.5), -1px -1px 0px 1px rgba(0,0,0,0.5)
+    transform: scale(1)
+    transition: transform 0.5s
+    &:hover
+      transform: scale(1.2)
+  img
+    max-width: 100%
+  h3
+    color: var(--main-color)
+    text-align: center
+    font-weight: 900
+  h4
+    font-size: 0.8rem
+    font-weight: 900
+    text-align: center
+
+// End Our Gallery
+
+// Start Timeline
+.timeline
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  background: #EEE
+  .timeline-content
+    position: relative
+    overflow: hidden
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 0
+      width: 2px
+      height: 100%
+      margin-left: -1px
+      background-color: var(--main-color)
+    .year
+      margin: 20px auto
+      width: 50px
+      background-color: var(--main-color)
+      position: relative
+      z-index: 2
+      color: #ffffff
+      border-radius: 4px
+      text-align: center
+      font-weight: 900
+      padding: 2px 5px
+      @include media(tablet)
+        margin: 20px auto 50px
+    .left
+      float: left
+      &:before
+        right: -32px
+      .content:before 
+        border-color: transparent transparent transparent #ffffff
+        right: -20px
+        @include media(tablet)
+          border-color: transparent transparent #ffffff transparent
+    .right
+      float: right
+      &:before
+        left: -32px
+      .content:before
+        border-color: transparent #ffffff transparent transparent
+        left: -20px
+        @include media(tablet)
+          border-color: transparent transparent #ffffff transparent
+    .left,.right
+      width: calc(50% - 25px)
+      margin-bottom: 40px
+      position: relative
+      @include media(tablet)
+        width: 100%
+      &:before
+        content: ''
+        position: absolute
+        width: 14px
+        height: 14px
+        background: #ffffff
+        border: 3px solid var(--main-color)
+        border-radius: 50%
+        top: 20px
+        @include media(tablet)
+          top: -27px
+          left: 50%
+          transform: translateX(-50%)
+      .content
+        background-color: #ffffff
+        padding: 2em
+        position: relative
+        @include media(tablet)
+          margin-top: 1em
+        &:before
+          content: ''
+          border-width: 10px 
+          border-style: solid 
+          position: absolute
+          width: 0
+          height: 0
+          top: 17px
+          @include media(tablet)
+            top: -20px
+            left: 50%
+            transform: translateX(-50%)
+        h3
+          color: var(--main-color)
+          margin: 0 0 10px
+          font-weight: 900
+        p
+          margin: 0
+          line-height: 1.7
+          color: #666
+// End Timeline
+
+// Start Features
+.features
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  overflow: hidden
+  h2 
+    @extend %heading
+    margin: 0 0 1.7em 0
+  .feat-box
+    width: calc(100% / 3)
+    float: left
+    text-align: center
+    margin: 2em 0
+    padding: 0 2em
+    @include media(desktop)
+      width: calc(100% / 2)
+    @include media(mobile)
+      width: 100%
+    img
+      width: 90px
+      height: 90px
+      object-fit: cover
+    h4
+      position: relative
+      font-weight: 900
+      margin: 15px 0 30px 0
+      &:before
+        content: ''
+        position: absolute
+        width: 40px
+        height: 4px
+        left: 50%
+        margin-left: -20px
+        bottom: -20px
+        background-color: var(--main-color)
+        border-radius: 2em
+    p
+      line-height: 1.7
+      color: #666666
+      margin: 0
+      text-align: center
+      font-size: 0.9rem
+// End Features
+
+// Start Testimonials
+.testimonials
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  position: relative
+  &:before,&:after
+    content: ''
+    width: 50%
+    height: 100%
+    top: 0
+    position: absolute
+    z-index: 1
+  &:before
+    background-color: var(--main-color)
+    left: 0
+  &:after
+    background-color: #333333
+    right: 0
+  h2
+    @extend %heading
+    color: #FFF
+    text-align: left
+    z-index: 2
+    position: relative
+  .testimonials-content
+    position: relative
+    z-index: 3
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    .ts-box
+      padding: 1.5em
+      background-color: #FFF
+      flex: 1 1 300px
+      margin-bottom: 2em
+      &:not(:last-of-type)
+        margin-right: 1em
+        @include media(tablet)
+          margin-right: 0
+      > p
+        color: #707070
+        line-height: 1.8
+        font-size: 0.9rem
+        margin: 0 0 1em 0
+        font-style: italic
+      .person-info
+        display: flex
+        img 
+          margin-right: 0.6em
+        h4
+          margin: 1em 0 0.2em 0
+          color: var(--main-color)
+          font-size: 1.2rem
+          font-weight: 500
+        p
+          margin: 0
+          font-size: 0.7rem   
+// End Testimonials
+
+// Contact Us
+.contact-us
+  min-height: 600px
+  padding-top: $paddingTop
+  padding-bottom: $paddingBottom
+  background: url(../imgs/contactUs.png) no-repeat center center/cover
+  position: relative
+  z-index: 1
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.22)
+    z-index: -1
+  h2
+    @extend %heading
+  form
+    display: flex
+    justify-content: space-between
+    @include media(tablet)
+      display: block
+    input:not([type='submit']),textarea
+      width: 100%
+      margin-bottom: 10px
+      height: 40px
+      padding: 20px
+      outline: none
+      border: 1px dashed #eee
+      background-color: transparent
+      &::placeholder
+        transition: 0.5s
+      &:focus
+        outline: 2px solid var(--main-color)
+      &:focus::placeholder
+        opacity: 0
+    textarea
+      height: 150px
+      resize: none
+    input[type='submit']
+      outline: none
+      border: none
+      cursor: pointer
+      height: 36px
+      background: var(--main-color)
+      width: 100%
+      color: #FFF
+      font-weight: 900
+      transition: 0.5s
+      &:hover
+        background-color: #ffffff
+        color: var(--main-color)
+    .left,.right
+      flex: 1 1 48%
+    .left
+      margin-right: 4%
+      @include media(tablet)
+        margin-right: 0
+
+// Start Grid System
+@include media-for-container(mobile)
+  .container
+    max-width: 540px
+@include media-for-container(tablet)
+  .container
+    max-width: 720px
+@include media-for-container(desktop)
+  .container
+    max-width: 960px
+@include media-for-container(large)
+  .container
+    max-width: 1140px

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speical Desing</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&amp;display=swap">
+    <link rel="stylesheet" href="css/all.min.css">
+  </head>
+  <body>
+    <div class="settings-box">
+      <div class="toggle-icon"><i class="fas fa-cog gear-icon"></i></div>
+      <div class="settings-container">
+        <div class="option-box">
+          <h4>Colors</h4>
+          <ul class="colors-list">
+            <li data-color="#00bcd4"></li>
+            <li data-color="#FF5722"></li>
+            <li data-color="#FF9800"></li>
+            <li data-color="#8BC34A"></li>
+            <li data-color="#009688"></li>
+          </ul>
+        </div>
+        <div class="option-box">
+          <h4>Random Background</h4>
+          <div class="random-background"><span class="yes active" data-background="yes">Yes</span><span class="no" data-background="no">No</span></div>
+        </div>
+        <div class="option-box">
+          <h4>Nav Bullets Option</h4>
+          <div class="bullets-Option"><span class="yes active" data-background="yes">Yes</span><span class="no" data-background="no">No</span></div>
+        </div>
+        <div class="option-box">
+          <button class="reset-button">Reset Default</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bullets">
+      <div class="bullet" data-section=".about-us">
+        <div class="tooltip">About US</div>
+      </div>
+      <div class="bullet" data-section=".skills">
+        <div class="tooltip">Our Skills</div>
+      </div>
+      <div class="bullet" data-section=".gallery">
+        <div class="tooltip">Our Gallery</div>
+      </div>
+      <div class="bullet" data-section=".timeline">
+        <div class="tooltip">Timeline</div>
+      </div>
+      <div class="bullet" data-section=".features">
+        <div class="tooltip">Features</div>
+      </div>
+      <div class="bullet" data-section=".testimonials">
+        <div class="tooltip">Testimonials</div>
+      </div>
+      <div class="bullet" data-section=".contact-us">
+        <div class="tooltip">Contact US</div>
+      </div>
+    </div>
+    <div class="landing-page">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="header-area">
+          <div class="logo">Speical Desing</div>
+          <div class="links-container">
+            <ul class="links">
+              <li><a href="#" data-section=".about-us">About Us</a></li>
+              <li><a href="#" data-section=".skills">Skills</a></li>
+              <li><a href="#" data-section=".gallery">Gallery</a></li>
+              <li><a href="#" data-section=".timeline">Timeline</a></li>
+              <li><a href="#" data-section=".features">Features</a></li>
+              <li><a href="#" data-section=".testimonials">Testimonials</a></li>
+              <li><a href="#" data-section=".contact-us">Contact Us</a></li>
+            </ul>
+            <button class="toggle-menu"><span></span><span></span><span></span></button>
+          </div>
+        </div>
+        <div class="introducation-text">
+          <h1>We Are <span>Creative</span> Agency</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, perferendis. Alias, dolore fugiat voluptates, temporibus cumque a repellat perferendis dicta eveniet deleniti quam excepturi culpa obcaecati aspernatur necessitatibus, minima explicabo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="about-us">
+        <div class="info-box">
+          <h2>About us</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe atque modi placeat aperiam facere ducimus at inventore fugiat mollitia! Eaque, possimus! Modi similique veritatis est placeat natus velit itaque. Natus!</p>
+        </div>
+        <div class="image-box"><img src="imgs/about-us.png" alt="about-us"></div>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="container">
+        <h2>Our Skills</h2>
+        <div class="skill-box">
+          <div class="skill-name">html</div>
+          <div class="skill-progress"><span data-progress="80%"></span></div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">css</div>
+          <div class="skill-progress"><span data-progress="50%"></span></div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">Javascript</div>
+          <div class="skill-progress"><span data-progress="30%"></span></div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">Python</div>
+          <div class="skill-progress"><span data-progress="10%"></span></div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">PHP</div>
+          <div class="skill-progress"><span data-progress="5%"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="container">
+        <h2>Our Gallery</h2>
+        <div class="images-box"><img src="imgs/01.jpg" alt="gallery 01" data-creator="Amir Maher"><img src="imgs/02.jpg" alt="gallery 02" data-creator="maikel Maher"><img src="imgs/03.jpg" alt="gallery 03" data-creator="maher Waheb"><img src="imgs/04.jpg" alt="gallery 04" data-creator="Salwa Fathey"><img src="imgs/05.jpg" alt="gallery 05" data-creator="Ahmed Elsayed"><img src="imgs/01.jpg" alt="gallery 06" data-creator="HESHAM"><img src="imgs/02.jpg" alt="" data-creator=""><img src="imgs/03.jpg" alt="" data-creator=""><img src="imgs/04.jpg" alt="" data-creator=""><img src="imgs/05.jpg"></div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="container">
+        <div class="timeline-content">
+          <div class="year">2018</div>
+          <div class="left">
+            <div class="content">
+              <h3>Event Title</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="right">
+            <div class="content">
+              <h3>Event Title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nihil dolor impedit. Assumenda, laborum deserunt error quis quo ex nesciunt labore, cumque sunt quam veniam voluptatibus, et sapiente. Natus, laboriosam.</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="year">2019</div>
+          <div class="left">
+            <div class="content">
+              <h3>Event Title</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="left">
+            <div class="content">
+              <h3>Event Title</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <h2>Our Features</h2>
+      <div class="container">
+        <div class="feat-box"><img src="imgs/icon-01.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="feat-box"><img src="imgs/icon-02.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="feat-box"><img src="imgs/icon-03.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="feat-box"><img src="imgs/icon-01.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="feat-box"><img src="imgs/icon-02.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="feat-box"><img src="imgs/icon-03.png">
+          <h4>Developement</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="testimonials-content">
+          <div class="ts-box">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!</p>
+            <div class="person-info"><img src="http://placehold.it/80/ddd">
+              <div class="name-job">
+                <h4>Amir Maher</h4>
+                <p>CEO Of Company</p>
+              </div>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!</p>
+            <div class="person-info"><img src="http://placehold.it/80/ccc">
+              <div class="name-job">
+                <h4>Amir Maher</h4>
+                <p>CEO Of Company</p>
+              </div>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!</p>
+            <div class="person-info"><img src="http://placehold.it/80/eee">
+              <div class="name-job">
+                <h4>Amir Maher</h4>
+                <p>CEO Of Company</p>
+              </div>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!</p>
+            <div class="person-info"><img src="http://placehold.it/80/eee">
+              <div class="name-job">
+                <h4>Amir Maher</h4>
+                <p>CEO Of Company</p>
+              </div>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!</p>
+            <div class="person-info"><img src="http://placehold.it/80/eee">
+              <div class="name-job">
+                <h4>Amir Maher</h4>
+                <p>CEO Of Company</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-us">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="">
+          <div class="left">
+            <input type="text" name="subject" placeholder="Subject">
+            <input type="text" name="fullName" placeholder="Full Name">
+            <input type="email" name="emial" placeholder="Enter Your Email">
+            <input type="number" name="phone" placeholder="Phone Nubmer">
+          </div>
+          <div class="right">
+            <textarea name="message" placeholder="Write Your Message"></textarea>
+            <input type="submit" value="Send">
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="js/master.js"></script>
+  </body>
+</html>

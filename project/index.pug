@@ -1,0 +1,234 @@
+//- Variables
+- var theTitle = 'Speical Desing'
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content='width=device-width, initial-scale=1.0')
+    title #{theTitle}
+    include pug/styles.pug
+  body
+    //- Start Settings Box
+    .settings-box
+      .toggle-icon
+        i(class='fas fa-cog gear-icon')
+      .settings-container
+        .option-box
+          h4 Colors
+          -var colors = ['#00bcd4', '#FF5722', '#FF9800','#8BC34A','#009688']
+          ul.colors-list
+            each color in colors.length ? colors : ''
+              li(data-color=color)
+        .option-box
+          h4 Random Background
+          .random-background
+            span(class='yes active' , data-background='yes') Yes
+            span(class='no' , data-background='no') No
+        .option-box
+          h4 Nav Bullets Option
+          .bullets-Option
+            span(class='yes active' , data-background='yes') Yes
+            span(class='no' , data-background='no') No
+        .option-box
+          button.reset-button Reset Default
+    //- End Settings Box
+
+    //- Start Bullets
+    .nav-bullets
+      .bullet(data-section='.about-us')
+        .tooltip About US
+      .bullet(data-section='.skills')
+        .tooltip Our Skills
+      .bullet(data-section='.gallery')
+        .tooltip Our Gallery
+      .bullet(data-section='.timeline')
+        .tooltip Timeline
+      .bullet(data-section='.features')
+        .tooltip Features
+      .bullet(data-section='.testimonials')
+        .tooltip Testimonials
+      .bullet(data-section='.contact-us')
+        .tooltip Contact US
+    //- End Bullets
+
+    //- Start Landing Page
+    div.landing-page
+      .overlay
+      .container
+        .header-area
+          .logo #{theTitle}
+          //- Links
+          .links-container
+            - var links = {'About Us':'.about-us', 'Skills':'.skills', 'Gallery':'.gallery', 'Timeline':'.timeline', 'Features':'.features', 'Testimonials':'.testimonials', 'Contact Us':'.contact-us'}
+            ul.links
+                each theClass, title in links
+                  li: a(href="#" data-section=theClass)= title
+            button.toggle-menu
+              span
+              span
+              span
+        .introducation-text
+          h1 We Are <span>Creative</span> Agency
+          p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, perferendis. Alias, dolore fugiat voluptates, temporibus cumque a repellat perferendis dicta eveniet deleniti quam excepturi culpa obcaecati aspernatur necessitatibus, minima explicabo.
+    //- End Landing Page
+
+    //- Start About us
+    .container
+      .about-us
+        .info-box
+          h2 About us
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe atque modi placeat aperiam facere ducimus at inventore fugiat mollitia! Eaque, possimus! Modi similique veritatis est placeat natus velit itaque. Natus!
+        .image-box
+          img(src="imgs/about-us.png", alt="about-us")
+    //- End About us
+
+    //- Start Our Skills
+    .skills
+      .container
+        h2 Our Skills
+        - var skills = {'html':'80%', 'css':'50%', 'Javascript': '30%', 'Python': '10%', 'PHP':'5%'}
+        each progress, name in skills
+          .skill-box
+            .skill-name #{name}
+            .skill-progress
+              span(data-progress = progress)
+
+    //- End Our Skills
+
+    //- Start Our Gallery
+    .gallery
+      .container
+        h2 Our Gallery
+        .images-box
+          img(src="imgs/01.jpg", alt="gallery 01", data-creator="Amir Maher")
+          img(src="imgs/02.jpg", alt="gallery 02", data-creator="maikel Maher")
+          img(src="imgs/03.jpg", alt="gallery 03", data-creator="maher Waheb")
+          img(src="imgs/04.jpg", alt="gallery 04", data-creator="Salwa Fathey")
+          img(src="imgs/05.jpg", alt="gallery 05", data-creator="Ahmed Elsayed")
+          img(src="imgs/01.jpg", alt="gallery 06", data-creator="HESHAM")
+          img(src="imgs/02.jpg", alt="", data-creator="")
+          img(src="imgs/03.jpg", alt="", data-creator="")
+          img(src="imgs/04.jpg", alt="", data-creator="")
+          img(src="imgs/05.jpg")
+    //- End Our Gallery
+
+    //- Start Timeline
+    .timeline
+      .container
+        .timeline-content
+          .year 2018
+          .left
+            .content
+              h3 Event Title
+              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.
+          .clearfix
+          .right
+            .content
+              h3 Event Title
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nihil dolor impedit. Assumenda, laborum deserunt error quis quo ex nesciunt labore, cumque sunt quam veniam voluptatibus, et sapiente. Natus, laboriosam.
+          .clearfix
+          .year 2019
+          .left
+            .content
+              h3 Event Title
+              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.
+          .clearfix
+          .left
+            .content
+              h3 Event Title
+              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dolores dolorum est, ullam hic quam maxime aut excepturi recusandae pariatur nihil culpa veritatis architecto dolor perferendis quo! Ratione, adipisci impedit.
+    //- End Timeline
+
+    //- Start Features
+    .features
+      h2 Our Features
+      .container
+        .feat-box
+          img(src="imgs/icon-01.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .feat-box
+          img(src="imgs/icon-02.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .feat-box
+          img(src="imgs/icon-03.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .feat-box
+          img(src="imgs/icon-01.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .feat-box
+          img(src="imgs/icon-02.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .feat-box
+          img(src="imgs/icon-03.png")
+          h4 Developement
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corporis nemo odit fugiat molestias pariatur!
+        .clearfix
+    //- End Features
+
+    //- Start Testimonials
+    .testimonials
+      .container
+        h2 Testimonials
+        .testimonials-content
+          .ts-box
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!
+            .person-info
+              img(src="http://placehold.it/80/ddd")
+              .name-job
+                h4 Amir Maher
+                p CEO Of Company
+          .ts-box
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!
+            .person-info
+              img(src="http://placehold.it/80/ccc")
+              .name-job
+                h4 Amir Maher
+                p CEO Of Company
+          .ts-box
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!
+            .person-info
+              img(src="http://placehold.it/80/eee")
+              .name-job
+                h4 Amir Maher
+                p CEO Of Company
+          .ts-box
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!
+            .person-info
+              img(src="http://placehold.it/80/eee")
+              .name-job
+                h4 Amir Maher
+                p CEO Of Company
+          .ts-box
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis modi dolorum voluptatem consectetur neque cumque!
+            .person-info
+              img(src="http://placehold.it/80/eee")
+              .name-job
+                h4 Amir Maher
+                p CEO Of Company
+
+    //- End Testimonials
+
+    //- Start Contact
+    .contact-us
+      .container
+        h2 Contact Us
+        form(action="")
+          .left
+            input(type="text" name="subject" placeholder="Subject")
+            input(type="text" name='fullName' placeholder="Full Name")
+            input(type="email", name="emial" placeholder="Enter Your Email")
+            input(type="number", name="phone" placeholder="Phone Nubmer")
+          .right
+            textarea(name="message" placeholder="Write Your Message")
+            input(type="submit", value="Send")
+    //- End Contact
+    
+    script(src="http://localhost:35729/livereload.js")
+    script(src="js/master.js")
+    
+
