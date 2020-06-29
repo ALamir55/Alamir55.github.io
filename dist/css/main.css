@@ -524,6 +524,7 @@ body {
   background-color: #FFF;
   border: 1px solid #cccccc;
   padding: 2em;
+  width: 80%;
 }
 
 .popup-box .close-button {
